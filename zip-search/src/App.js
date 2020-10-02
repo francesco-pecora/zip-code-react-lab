@@ -79,9 +79,11 @@ class App extends Component {
         <div className="App-header">
           <h2>Zip Code Search</h2>
         </div>
-        <ZipSearchField getZipCode={(event) => this.getZipCode(event)} 
-                        getZipCodeResult={(event) => this.getZipCodeResult(event)}/>
-        <div>
+        <div className="city">
+          <ZipSearchField getZipCode={(event) => this.getZipCode(event)} 
+                          getZipCodeResult={(event) => this.getZipCodeResult(event)}/>
+        </div>
+        <div className="city">
           { jsxResult }
         </div>
       </div>
