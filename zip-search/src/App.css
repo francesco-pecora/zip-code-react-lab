@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.city {
+  margin-top: 20px;
+}
+
 .contentContainer {
   display: flex;
   justify-content: center;
