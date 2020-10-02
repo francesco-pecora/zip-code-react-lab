@@ -5,6 +5,20 @@
   text-align: center;
 }
 
-.city {
-  text-align: center;
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cityContainer {
+  width: 35vw;
+  border: 1px solid gray;
+  margin: 20px;
+}
+
+.cityHeader {
+  background-color: rgb(241, 241, 241);
+  padding: 5px;
+  border-bottom: 1px solid gray;
 }

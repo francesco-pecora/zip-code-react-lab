@@ -3,11 +3,18 @@ import './App.css';
 
 
 function City(props) {
-  return (<div>
-            {props.state}<br/>
-            {props.location}<br/>
-            {props.population}<br/>
-            {props.totalWages}<br/><br/>
+  return (<div className="cityContainer">
+            <div className="cityHeader">
+              {props.city}
+            </div>
+            <div>
+              <ul>
+                <li>State: {props.state}</li>
+                <li>Location: ({props.location[0]}, {props.location[1]})</li>
+                <li>Population (estimated): {props.population}</li>
+                <li>Total Wages: {props.totalWages}</li>
+              </ul>
+            </div>
           </div>
   );
 }
@@ -61,7 +68,8 @@ class App extends Component {
     for(let i = 0; i < this.state.cities.length; i++){
       let currentCity = this.state.cities[i];
       jsxResult.push(
-        <City key = {i} 
+        <City key = {i}
+              city = {currentCity.City}
               state = {currentCity.State}
               location = {[currentCity.Lat, currentCity.Long]}
               population = {currentCity.EstimatedPopulation}
@@ -79,12 +87,16 @@ class App extends Component {
         <div className="App-header">
           <h2>Zip Code Search</h2>
         </div>
-        <div className="city">
-          <ZipSearchField getZipCode={(event) => this.getZipCode(event)} 
-                          getZipCodeResult={(event) => this.getZipCodeResult(event)}/>
-        </div>
-        <div className="city">
-          { jsxResult }
+        <div className="contentContainer">
+          <div className="contentContainerInner">
+            <div className="city">
+              <ZipSearchField getZipCode={(event) => this.getZipCode(event)} 
+                              getZipCodeResult={(event) => this.getZipCodeResult(event)}/>
+            </div>
+            <div className="city">
+              { jsxResult }
+            </div>
+          </div>
         </div>
       </div>
     );
